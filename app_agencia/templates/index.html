@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes de Nuestra Agencia de Viajes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        li {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        strong {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nuestros Valiosos Clientes de Yared Coss</h1>
+    
+    {% if clientes %}
+        <ul>
+            {% for cliente in clientes %}
+                <li>
+                    <strong>Nombre:</strong> {{ cliente.nombre }}<br>
+                    <strong>Destino Preferido:</strong> {{ cliente.destino_preferido }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay datos de clientes disponibles.</p>
+    {% endif %}
+
+    <p style="text-align: center; margin-top: 30px; color: #666;">¡Gracias por elegir nuestra agencia de viajes!</p>
+</body>
+</html>
